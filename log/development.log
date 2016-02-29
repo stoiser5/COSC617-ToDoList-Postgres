@@ -1,0 +1,2317 @@
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (20.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTodoItems (20160229131351)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "item" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160229131351"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (30.8ms)[0m  DELETE FROM "todo_items"
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["date", "2016-02-29"], ["item", "Make breakfeast for Peter and Jane"], ["created_at", "2016-02-29 13:44:49.054271"], ["updated_at", "2016-02-29 13:44:49.054271"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "2016-03-04"], ["item", "Meeting with lawyer"], ["created_at", "2016-02-29 13:44:49.138145"], ["updated_at", "2016-02-29 13:44:49.138145"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["date", "2016-03-08"], ["item", "Take Mary to dentist"], ["created_at", "2016-02-29 13:44:49.144087"], ["updated_at", "2016-02-29 13:44:49.144087"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-02-29 09:03:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant OdoItemsController):
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.5.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (38.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (84.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (369.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (197.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (335.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:04:19 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (19.5ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 4401ms (Views: 4377.6ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:04:23 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 09:30:31 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (17.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (36.3ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 17.4ms)
+
+ActionView::Template::Error (undefined method `items' for #<TodoItem:0x007f858638cb98>
+Did you mean?  item
+               item_was
+               item?
+               item=):
+    11:       </tr>
+    12:         <tr colspan="2">
+    13: 
+    14:         <td><%= todo_item.items %></td>
+    15:         <td><%= link_to 'Show', todo_item %></td>
+    16:         <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+    17:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/todo_items/index.html.erb:14:in `block in _app_views_todo_items_index_html_erb___3722577600667364350_70105740971200'
+  app/views/todo_items/index.html.erb:8:in `_app_views_todo_items_index_html_erb___3722577600667364350_70105740971200'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (161.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (117.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (284.9ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:31:15 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 232ms (Views: 230.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:31:16 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 09:45:09 -0500
+Processing by TodoItemsController#index as HTML
+  Rendered todo_items/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5: <table>
+     6: 
+     7:   <tbody>
+     8:     <% @todo_date.each do |todo_date| %>
+     9:       <tr>
+    10:         <td><strong>Date:</strong></td><td><%= todo_date %></td><td></td><td></td><td></td>
+    11:       </tr>
+  app/views/todo_items/index.html.erb:8:in `_app_views_todo_items_index_html_erb___3722577600667364350_70105728830500'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (164.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (106.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (252.8ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:45:53 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (15.6ms)[0m  [1mSELECT DISTINCT(date) FROM "todo_items"[0m
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (339.8ms)
+Completed 500 Internal Server Error in 359ms (ActiveRecord: 16.6ms)
+
+ActionView::Template::Error (undefined local variable or method `todo_item' for #<#<Class:0x007f8585b98fe0>:0x007f8587f6c7a0>
+Did you mean?  @todo_items
+               todo_item_url
+               todo_item_path
+               todo_items_url
+               todo_items_path
+               todo_date
+               todo_items_add_url
+               todo_items_new_url
+               todo_items_add_path
+               todo_items_edit_url
+               todo_items_new_path
+               todo_items_index_url
+               todo_items_edit_path
+               todo_items_index_path
+               todo_items_delete_url
+               todo_items_delete_path
+               @todo_dates):
+    12:         <tr colspan="2">
+    13: 
+    14:         <td><%= TodoItem.where('date' => todo_date) %></td>
+    15:         <td><%= link_to 'Show', todo_item %></td>
+    16:         <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+    17:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    18:       </tr>
+  app/views/todo_items/index.html.erb:15:in `block in _app_views_todo_items_index_html_erb___3722577600667364350_70105744095540'
+  app/views/todo_items/index.html.erb:8:in `_app_views_todo_items_index_html_erb___3722577600667364350_70105744095540'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (144.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (129.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (401.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:48:40 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT DISTINCT(date) FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"todo_items", :id=>nil} missing required keys: [:id]):
+    12:         <tr colspan="2">
+    13: 
+    14:         <td><%= TodoItem.where('date' => todo_date) %></td>
+    15:         <td><%= link_to 'Show', todo_date %></td>
+    16:         <td><%= link_to 'Edit', edit_todo_item_path(todo_date) %></td>
+    17:         <td><%= link_to 'Destroy', todo_date, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    18:       </tr>
+  app/views/todo_items/index.html.erb:15:in `block in _app_views_todo_items_index_html_erb___3722577600667364350_70105759726020'
+  app/views/todo_items/index.html.erb:8:in `_app_views_todo_items_index_html_erb___3722577600667364350_70105759726020'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (145.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (124.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (263.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:50:14 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT DISTINCT(date) FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (85.5ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined local variable or method `todo_date' for #<#<Class:0x007f8585b98fe0>:0x007f858aa409e0>
+Did you mean?  @todo_dates
+               todo_item):
+    12:         <tr colspan="2">
+    13: 
+    14:         <td><%= TodoItem.where('date' => todo_item) %></td>
+    15:         <td><%= link_to 'Show', todo_date %></td>
+    16:         <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+    17:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    18:       </tr>
+  app/views/todo_items/index.html.erb:15:in `block in _app_views_todo_items_index_html_erb___3722577600667364350_70105728731340'
+  app/views/todo_items/index.html.erb:8:in `_app_views_todo_items_index_html_erb___3722577600667364350_70105728731340'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (237.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 09:50:38 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 239ms (Views: 237.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:50:38 -0500
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:50:38 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:50:38 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:50:38 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:50:39 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 09:51:26 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 123ms (Views: 120.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:51:26 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 09:53:10 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.4ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 207ms (Views: 205.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:53:10 -0500
+
+
+Started GET "/" for ::1 at 2016-02-29 09:53:38 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-c118e0b73f34fa19a268b82f1829804a127201bad6804716464bf1296f3994a6.css?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-29 09:53:38 -0500
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-29 09:57:23 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 392ms (Views: 75.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/1/edit" for ::1 at 2016-02-29 09:57:27 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (99.7ms)
+  Rendered todo_items/edit.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 185ms (Views: 182.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/todo_items/1" for ::1 at 2016-02-29 09:57:37 -0500
+Processing by TodoItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SO7tzD7O7Zf2e2GaA34kk4/HTeOSHosMW7jCOieDs3QIj2Xb7La0KPwLV3sSrUXapF/M5eax6aKYNv97qQUD5w==", "todo_item"=>{"date(1i)"=>"2016", "date(2i)"=>"2", "date(3i)"=>"29", "item"=>"Make breakfeast for Peter and Mary"}, "commit"=>"Update Todo item", "id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "todo_items" SET "item" = ?, "updated_at" = ? WHERE "todo_items"."id" = ?  [["item", "Make breakfeast for Peter and Mary"], ["updated_at", "2016-02-29 14:57:37.907171"], ["id", 1]]
+  [1m[36m (52.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todo_items/1
+Completed 302 Found in 72ms (ActiveRecord: 54.2ms)
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-29 09:57:37 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.5ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 97ms (Views: 67.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-29 09:57:40 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:19:18 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.6ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2189761955284996356_70105728877540'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (158.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (104.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (233.4ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:20:42 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2189761955284996356_70105728877540'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (35.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (175.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (105.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (235.6ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:25:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.4ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 536ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (167.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (183.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (339.7ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:30:38 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (153.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (209.2ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2016-02-29 10:30:47 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (149.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (146.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (280.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 10:30:49 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (151.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (214.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 10:30:50 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (150.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (206.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 10:30:57 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (157.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (211.0ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2016-02-29 10:30:58 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (149.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (214.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:31:04 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (155.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (218.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:31:05 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.sass:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__2942523519490812276_70363521987640'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (154.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (119.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (251.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:33:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 9180ms (Views: 9133.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/application.self-6e3fb4c2af5b60a1b312e22c3846671bf892392bfba13f56a916234c261a8677.css?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-02-29 10:33:56 -0500
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2016-02-29 10:34:28 -0500
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (182.8ms)
+  Rendered todo_items/new.html.erb within layouts/application (238.5ms)
+Completed 200 OK in 388ms (Views: 386.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:34:36 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 156ms (Views: 154.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:49:46 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.7ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 1334ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (couldn't find file 'twitter-bootstrap-static/bootstrap' with type 'text/css'):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/bootstrap_and_overrides.css:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3011440829233971152_70156441190560'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (169.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (111.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (248.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 10:51:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (couldn't find file 'twitter-bootstrap-static/bootstrap' with type 'text/css'):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/bootstrap_and_overrides.css:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__795388227995592135_70311113522780'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (157.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (196.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (339.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 11:16:19 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (21.1ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (179.4ms)
+Completed 500 Internal Server Error in 11515ms (ActiveRecord: 21.1ms)
+
+ActionView::Template::Error (couldn't find file 'twitter/bootstrap' with type 'application/javascript'):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__795388227995592135_70311113522780'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (258.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (549.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1551.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 11:17:06 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 560ms (Views: 558.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-727551ccffad4938418681ceb42b39bbded46dd4f8fb589a0a3733e5d721ade5.css?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 11:17:07 -0500
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 11:22:11 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 288ms (Views: 286.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-727551ccffad4938418681ceb42b39bbded46dd4f8fb589a0a3733e5d721ade5.css?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-29 11:22:12 -0500
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:22:24 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (101.2ms)
+  Rendered todo_items/edit.html.erb within layouts/application (106.3ms)
+Completed 200 OK in 540ms (Views: 176.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/todo_items/1" for 127.0.0.1 at 2016-02-29 11:22:38 -0500
+Processing by TodoItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aQZmqzZJt+tC2zegOr0xrihSolVv03/0NqEW7NITYI4pZ+685DHuVEirAUErblDnA8ojUxt8HVr1LyutXJXQHQ==", "todo_item"=>{"date(1i)"=>"2016", "date(2i)"=>"2", "date(3i)"=>"29", "item"=>"Make breakfeast for Peter and Jane"}, "commit"=>"Update Todo item", "id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "todo_items" SET "item" = ?, "updated_at" = ? WHERE "todo_items"."id" = ?[0m  [["item", "Make breakfeast for Peter and Jane"], ["updated_at", "2016-02-29 16:22:39.041279"], ["id", 1]]
+  [1m[35m (132.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/todo_items/1
+Completed 302 Found in 178ms (ActiveRecord: 133.7ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2016-02-29 11:22:39 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 11:22:44 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 229ms (Views: 227.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-727551ccffad4938418681ceb42b39bbded46dd4f8fb589a0a3733e5d721ade5.css?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 11:25:48 -0500
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:25:53 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (57.9ms)
+  Rendered todo_items/edit.html.erb within layouts/application (79.5ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<ActionView::Helpers::FormBuilder:0x007fe52f280228>):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.commit_button :button_html => {:class => "primary"} %>
+    24:     <%= f.submit %>
+    25:   </div>
+    26: <% end %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb___1336355705300451986_70311167624140'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311167624140'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311144719600'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (151.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (105.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (236.7ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:25:55 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (37.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<ActionView::Helpers::FormBuilder:0x007fe530205838>):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.commit_button :button_html => {:class => "primary"} %>
+    24:     <%= f.submit %>
+    25:   </div>
+    26: <% end %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb___1336355705300451986_70311165882260'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311165882260'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311166616160'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (169.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.4ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:25:56 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (33.6ms)
+  Rendered todo_items/edit.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<ActionView::Helpers::FormBuilder:0x007fe530610748>):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.commit_button :button_html => {:class => "primary"} %>
+    24:     <%= f.submit %>
+    25:   </div>
+    26: <% end %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb___1336355705300451986_70311165882260'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311165882260'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311166616160'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (142.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (211.9ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:27:20 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (49.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (65.6ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `buttons' for #<ActionView::Helpers::FormBuilder:0x007fe52dc70078>
+Did you mean?  button):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.buttons do %>
+    24:         <%= f.commit_button :button_html => {:class => "primary"} %>
+    25:     <% end %>
+    26:     <%= f.submit %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb___1336355705300451986_70311175419680'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311175419680'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311166616160'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (146.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (252.8ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:27:47 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (35.6ms)
+  Rendered todo_items/edit.html.erb within layouts/application (38.3ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<ActionView::Helpers::FormBuilder:0x007fe530ccd388>):
+    21:   </div>
+    22:   <div class="actions">
+    23:     <%= f.button do %>
+    24:         <%= f.commit_button :button_html => {:class => "primary"} %>
+    25:     <% end %>
+    26:     <%= f.submit %>
+    27:   </div>
+  app/views/todo_items/_form.html.erb:24:in `block (2 levels) in _app_views_todo_items__form_html_erb___1336355705300451986_70311171453540'
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb___1336355705300451986_70311171453540'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311171453540'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311166616160'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (147.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.8ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (6.1ms)
+  Rendered todo_items/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 251ms (Views: 248.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-727551ccffad4938418681ceb42b39bbded46dd4f8fb589a0a3733e5d721ade5.css?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 11:28:52 -0500
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:32:18 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (55.9ms)
+  Rendered todo_items/edit.html.erb within layouts/application (65.6ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `semantic_form_for' for #<#<Class:0x007fe529a1e030>:0x007fe5310cfbc0>):
+    1: <%= semantic_form_for(@todo_item) do |f| %>
+    2:   <% if @todo_item.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@todo_item.errors.count, "error") %> prohibited this todo_item from being saved:</h2>
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb___1336355705300451986_70311172355740'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___515555262303108205_70311166616160'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (249.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (240.3ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:33:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (270.7ms)
+  Rendered todo_items/edit.html.erb within layouts/application (299.6ms)
+Completed 500 Internal Server Error in 450ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `buttons' for #<FormtasticBootstrap::FormBuilder:0x007fa272e32fa8>
+Did you mean?  button):
+    19:     <%= f.label :item %><br>
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22:     <%= f.buttons do %>
+    23:         <%= f.commit_button :button_html => {:class => "primary"} %>
+    24:     <% end %>
+    25: <% end %>
+  app/views/todo_items/_form.html.erb:22:in `block in _app_views_todo_items__form_html_erb__2553598554053080863_70167844507220'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb__2553598554053080863_70167844507220'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___4346120257671032717_70167859129260'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (169.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (117.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (265.5ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:35:20 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (44.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (51.2ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<FormtasticBootstrap::FormBuilder:0x007fa274a9d7b0>):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22: 
+    23:         <%= f.commit_button :button_html => {:class => "primary"} %>
+    24:    
+    25: <% end %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb__2553598554053080863_70167884852960'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb__2553598554053080863_70167884852960'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___4346120257671032717_70167859129260'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (185.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (104.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (250.5ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:39:35 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (38.2ms)
+  Rendered todo_items/edit.html.erb within layouts/application (44.1ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `commit_button' for #<FormtasticBootstrap::FormBuilder:0x007fa2790083b8>):
+    20:     <%= f.text_area :item %>
+    21:   </div>
+    22: 
+    23:         <%= f.commit_button :button_html => {:class => "primary"} %>
+    24: 
+    25: <% end %>
+  app/views/todo_items/_form.html.erb:23:in `block in _app_views_todo_items__form_html_erb__2553598554053080863_70167874740180'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb__2553598554053080863_70167874740180'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___4346120257671032717_70167859129260'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (151.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (218.3ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 11:40:06 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (6.7ms)
+  Rendered todo_items/edit.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 724ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/formtastic-bootstrap-3.1.1/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/formtastic-3.1.3/app/assets/stylesheets):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.scss:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2470109224219167027_70167859096240'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (161.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (220.2ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 11:41:01 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (150.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (105.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (238.9ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 11:42:05 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (141.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.6ms)
+
+
+Started GET "/todo_items/edit" for 127.0.0.1 at 2016-02-29 11:42:16 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=edit):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (140.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.3ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2016-02-29 11:42:34 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 375ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/formtastic-bootstrap-3.1.1/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/formtastic-3.1.3/app/assets/stylesheets):
+    2: <html>
+    3: <head>
+    4:   <title>COSC617Todolist</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/application.css.scss:2
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2470109224219167027_70167859096240'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (150.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (213.1ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 11:42:36 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (145.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (105.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (249.2ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 11:45:06 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (142.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (102.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (224.5ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 11:53:11 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mTodoItem Load (16.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 19ms (ActiveRecord: 16.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (146.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (240.1ms)
+
+
+Started GET "/todo_items/index.html" for 127.0.0.1 at 2016-02-29 12:05:15 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=index):
+  app/controllers/todo_items_controller.rb:68:in `set_todo_item'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (152.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (239.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 12:05:28 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (48.3ms)
+Completed 500 Internal Server Error in 3354ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (couldn't find file 'twitter-bootstrap-static/bootstrap' with type 'text/css'):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "COSC617Todolist" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <!-- For third-generation iPad with high-resolution Retina display: -->
+    13:     <!-- Size should be 144 x 144 pixels -->
+  app/assets/stylesheets/bootstrap_and_overrides.css:2
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2470109224219167027_70167843946200'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (148.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (113.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (231.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 12:07:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (35.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (214.2ms)
+Completed 500 Internal Server Error in 8012ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/images
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/RubymineProjects/COSC617-ToDoList/vendor/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/jquery-rails-4.1.0/vendor/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "COSC617Todolist" %></title>
+     8:     <%= csrf_meta_tags %>
+     9: 
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <!-- For third-generation iPad with high-resolution Retina display: -->
+    13:     <!-- Size should be 144 x 144 pixels -->
+  app/assets/stylesheets/todo_items.css.scss:1
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3261455028237205737_70331009483360'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.1ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (184.3ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (338.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (541.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 12:09:57 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 3896ms (Views: 3894.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-9f0f61b9cbd3faa0aa25bc2b395c423311493303c9acbb819ca1e5252d8aac7a.css?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-ef39141ea917afa530a9c051677d331802e609fca325288eb17001a1bfb4a5b8.css?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-cae09baa7a6c496232ac2d8d9e467b82e1c7facd1ac8b1af1f09dc1b4b5d817b.css?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-29 12:10:01 -0500
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2016-02-29 12:10:02 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/sigridberkebile-stoiser/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (719.9ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1051.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (122.0ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/sigridberkebile-stoiser/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (273.2ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2016-02-29 12:12:30 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.4ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (86.9ms)
+  Rendered todo_items/edit.html.erb within layouts/application (93.5ms)
+Completed 200 OK in 821ms (Views: 394.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 12:12:36 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 147ms (Views: 145.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2016-02-29 12:12:42 -0500
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (6.5ms)
+  Rendered todo_items/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 174ms (Views: 173.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2016-02-29 12:12:45 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 226ms (Views: 225.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-29 12:57:00 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (85.5ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (259.3ms)
+Completed 200 OK in 1656ms (Views: 1545.2ms | ActiveRecord: 85.5ms)
+
+
+Started GET "/assets/application.self-9f0f61b9cbd3faa0aa25bc2b395c423311493303c9acbb819ca1e5252d8aac7a.css?body=1" for 127.0.0.1 at 2016-02-29 12:57:02 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-ef39141ea917afa530a9c051677d331802e609fca325288eb17001a1bfb4a5b8.css?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-cae09baa7a6c496232ac2d8d9e467b82e1c7facd1ac8b1af1f09dc1b4b5d817b.css?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-29 12:57:03 -0500
+  [1m[36m (394.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (17.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTodoItems (20160229131351)
+  [1m[35m (13.7ms)[0m  BEGIN
+  [1m[36m (140.9ms)[0m  [1mCREATE TABLE "todo_items" ("id" serial primary key, "date" date, "item" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (13.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160229131351"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (30.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'todo_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (14.2ms)[0m  DELETE FROM "todo_items"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.0ms)[0m  INSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["date", "2016-02-29"], ["item", "Make breakfeast for Peter and Jane"], ["created_at", "2016-02-29 19:04:19.764155"], ["updated_at", "2016-02-29 19:04:19.764155"]]
+  [1m[36m (16.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["date", "2016-03-04"], ["item", "Meeting with lawyer"], ["created_at", "2016-02-29 19:04:19.807696"], ["updated_at", "2016-02-29 19:04:19.807696"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["date", "2016-03-08"], ["item", "Take Mary to dentist"], ["created_at", "2016-02-29 19:04:19.811168"], ["updated_at", "2016-02-29 19:04:19.811168"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/todo_items" for ::1 at 2016-02-29 14:05:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (19.1ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (242.6ms)
+Completed 200 OK in 1428ms (Views: 1353.3ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/todo_items/2/edit" for ::1 at 2016-02-29 14:05:28 -0500
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodoItem Load (0.5ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered todo_items/_form.html.erb (103.5ms)
+  Rendered todo_items/edit.html.erb within layouts/application (135.1ms)
+Completed 200 OK in 416ms (Views: 306.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-29 14:05:31 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (1.1ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 148ms (Views: 145.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/todo_items/new" for ::1 at 2016-02-29 14:07:56 -0500
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (2.9ms)
+  Rendered todo_items/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 142ms (Views: 141.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todo_items" for ::1 at 2016-02-29 14:08:23 -0500
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zy9W3BYhApZHjUuTFWh+hZ7thlrNx1eHDdxf4sfBkKEy2Nv1ZIeD23GyecQwum2BFzJ9+uEfdfs3QpqjXXmEUQ==", "todo_item"=>{"date"=>"2016-04-01", "item"=>"Make April's fools jokes"}, "commit"=>"Create Todo item"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (50.0ms)[0m  INSERT INTO "todo_items" ("date", "item", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["date", "2016-04-01"], ["item", "Make April's fools jokes"], ["created_at", "2016-02-29 19:08:24.040133"], ["updated_at", "2016-02-29 19:08:24.040133"]]
+  [1m[36m (10.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/todo_items/4
+Completed 302 Found in 100ms (ActiveRecord: 60.4ms)
+
+
+Started GET "/todo_items/4" for ::1 at 2016-02-29 14:08:24 -0500
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mTodoItem Load (0.5ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered todo_items/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 137ms (Views: 132.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-29 14:08:28 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (1.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 140ms (Views: 137.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-29 14:38:34 -0500
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.4ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 644ms (Views: 642.7ms | ActiveRecord: 0.4ms)
